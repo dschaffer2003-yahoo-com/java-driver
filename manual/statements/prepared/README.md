@@ -250,7 +250,7 @@ the driver is not able to properly react to these changes and will improperly re
 a schema change is made.
 
 Therefore it is currently recommended to not create prepared statements
-for 'select *' queries unless you don't plan on making schema changes involving
+for 'select *' queries if you plan on making schema changes involving
 adding or dropping columns. Alternatively you should list all columns of interest
 in your statement, i.e.: `select a, b, c from table`.
 
