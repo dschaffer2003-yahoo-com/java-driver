@@ -88,7 +88,7 @@ session.execute(batch);
 ```
 
 
-### Why do my 'select *' `PreparedStatement`-based queries stop working after a schema change?
+### Why do my 'SELECT *' `PreparedStatement`-based queries stop working after a schema change?
 
 Both the driver and Cassandra maintain a mapping of `PreparedStatement` queries to their
 metadata.  When a change is made to a table, such as a column being added or dropped, there

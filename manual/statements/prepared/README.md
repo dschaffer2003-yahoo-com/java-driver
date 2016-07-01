@@ -241,7 +241,7 @@ Changing the driver's defaults should be done with care and only in
 specific situations; read each method's Javadoc for detailed
 explanations.
 
-### Avoid preparing 'select *' queries
+### Avoid preparing 'SELECT *' queries
 
 Both the driver and Cassandra maintain a mapping of `PreparedStatement` queries to their
 metadata.  When a change is made to a table, such as a column being added or dropped, there
@@ -250,9 +250,9 @@ the driver is not able to properly react to these changes and will improperly re
 a schema change is made.
 
 Therefore it is currently recommended to not create prepared statements
-for 'select *' queries if you plan on making schema changes involving
+for 'SELECT *' queries if you plan on making schema changes involving
 adding or dropping columns. Alternatively you should list all columns of interest
-in your statement, i.e.: `select a, b, c from table`.
+in your statement, i.e.: `SELECT a, b, c FROM tbl`.
 
 This will be addressed in a future release of both Cassandra and the driver.  Follow
 [CASSANDRA-10786] and [JAVA-1196] for more information.
